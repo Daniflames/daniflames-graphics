@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniflames Graphics | Client Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">D</span><span><b>Daniflames</b><small>GRAPHICS PORTAL</small></span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <nav>
+      <button class="nav-link active" data-page="Overview">▦ <span>Overview</span></button>
+      <button class="nav-link" data-page="All projects">▣ <span>All projects</span></button>
+      <button class="nav-link" data-page="Upload artwork">↑ <span>Upload artwork</span></button>
+      <button class="nav-link" data-page="Private links">↗ <span>Private links</span></button>
+      <button class="nav-link" data-page="Clients">♙ <span>Clients</span></button>
+      <button class="nav-link" data-page="Archive">▤ <span>Archive</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="help-card"><b>Your creative workspace</b><p>Keep every project and delivery in one place.</p></div>
+      <div class="profile"><span class="avatar">DF</span><span><b>Daniflames</b><small>Administrator</small></span></div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button class="menu-button" id="menuButton">☰</button><div class="breadcrumb">Workspace <span>/</span> <b id="pageName">Overview</b></div><span class="workspace-status">● Workspace ready</span></header>
+    <section class="content">
+      <div class="welcome-row"><div><p class="eyebrow">DANIFLAMES GRAPHICS</p><h1 id="pageHeading">Good to see you.</h1><p class="muted">Here is what is happening with your creative projects.</p></div><button class="primary-button" id="newProjectButton">＋ New project</button></div>
+      <section class="stats-grid">
+        <article class="stat-card"><span>Total projects</span><strong id="totalProjects">0</strong><small>Projects in this demo</small></article>
+        <article class="stat-card"><span>Awaiting approval</span><strong id="pendingProjects">0</strong><small>Preview shared with clients</small></article>
+        <article class="stat-card"><span>Delivered</span><strong id="deliveredProjects">0</strong><small>Completed projects</small></article>
+        <article class="stat-card"><span>Active links</span><strong id="activeLinks">0</strong><small>Preview and delivery links</small></article>
+      </section>
+      <div class="section-heading"><div><h2>Recent projects</h2><p class="muted">Your latest client artwork and delivery activity.</p></div><button class="text-button" data-page="All projects">View all projects →</button></div>
+      <section class="panel table-wrap"><table><thead><tr><th>PROJECT</th><th>CLIENT</th><th>DATE ADDED</th><th>STATUS</th><th>LINKS</th></tr></thead><tbody id="projectRows"><tr><td colspan="5" class="empty-state">No projects yet. Select <b>New project</b> to add your first client job.</td></tr></tbody></table></section>
+      <div class="bottom-grid">
+        <section class="panel quick-panel"><h2>Quick start</h2><p class="muted">Our project workflow</p><div class="step"><b>01</b><span><strong>Add a client project</strong><small>Enter the client and project details.</small></span></div><div class="step"><b>02</b><span><strong>Upload original artwork</strong><small>Keep the high-resolution source file safe.</small></span></div><div class="step"><b>03</b><span><strong>Create a private link</strong><small>Share a preview, then deliver the original.</small></span></div></section>
+        <section class="panel security-panel"><div class="security-icon">◇</div><h2>Private by design</h2><p class="muted">The live portal will use protected storage. Preview and delivery links will have separate permissions.</p><small>● Secure storage will be configured in a later stage.</small></section>
+      </div>
+      <footer>© <span id="year"></span> Daniflames Graphics. All rights reserved.</footer>
+    </section>
+  </main>
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true"><div class="modal-heading"><div><p class="eyebrow">PROJECT SETUP</p><h2>Create a project</h2><p class="muted">Add the client details and artwork.</p></div><button class="close-button" id="closeModal">×</button></div>
+    <form id="projectForm">
+      <label>Project title<input id="projectTitle" required maxlength="80" placeholder="e.g. Convocation flyer"></label>
+      <label>Client name<input id="clientName" required maxlength="80" placeholder="e.g. John Ade"></label>
+      <label>Client email (optional)<input id="clientEmail" type="email" placeholder="client@example.com"></label>
+      <label>Artwork file<input id="artworkFile" type="file" accept="image/*,.pdf" required><small class="hint">Demo only: this does not upload your file to online storage yet.</small></label>
+      <div class="file-info" id="fileInfo">No file selected</div>
+      <div class="modal-actions"><button type="button" class="secondary-button" id="cancelModal">Cancel</button><button type="submit" class="primary-button">Create project</button></div>
+    </form>
+  </section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
